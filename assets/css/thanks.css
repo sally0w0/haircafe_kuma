@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.sec-thanks {
+    background-color: var(--bg-gy-color);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    padding: 70px 0;
+}
+
+.sec-thanks h3 {
+    font-size: 1.75rem; /*28px*/
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sec-thanks p {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.sec-thanks a {
+    display: inline-block;
+    line-height: 50px;
+    background-color: var(--maincolor);
+    color: #fff;
+    font-weight: bold;
+    padding: 0 50px;
+    transition: 0.5s;
+}
+
+.sec-thanks a:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.sec-cta {
+    margin-top: 0;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------
+タブレット以下の表示はここからです
+------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width:767px){
+    .sec-thanks p {
+        text-align: left;
+    }
+}

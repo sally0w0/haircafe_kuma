@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+.sub-visual {
+	background-image: url(../images/faq-mv.jpg);
+}
+
+.faq-list {
+	line-height: 1.5;
+    margin-bottom: 100px;
+}
+
+.faq-list dt {
+    position: relative;
+    padding: 24px 60px;
+	background: var(--bg-gr-color);
+    margin-bottom: 20px;
+    font-size: 1.12rem; /*18px*/
+    font-weight: bold;
+	display: flex;
+    align-items: center;
+}
+
+.faq-list dt::before {
+    content: "";
+	background: url(../images/icon-faq.svg) no-repeat;
+	display: inline-block;
+	min-width: 30px;
+	height: 30px;
+	margin-right: 10px;
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-list dt::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid var(--maincolor);
+    border-right: 3px solid var(--maincolor);
+    transform: rotate(135deg);
+	transition: 0.5s;
+}
+
+.faq-list dd {
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+	display: none;
+    line-height: 1.75;
+}
+
+.faq-list dt.open::after {
+	transform: rotate(-45deg);
+	transition: 0.5s;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------
+タブレット以下の表示はここからです
+------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width:767px){
+    .faq-list dt {
+        font-size: 1rem;
+        padding: 15px 50px 15px 60px;
+        align-items: flex-start;
+    }
+
+    .faq-list dt::before {
+        left: 15px;
+        top: 12px;
+        transform: translateY(0);
+    }
+
+    .faq-list dt::after {
+        top: 20px;
+    }
+}

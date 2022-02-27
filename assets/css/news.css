@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+.sub-visual {
+	background-image: url(../images/news-mv.jpg);
+}
+
+.sec-news {
+	padding: 50px 20px;
+	position: relative;
+	border-bottom: 3px dotted var(--bg-gr-color);
+	line-height: 1.5;
+}
+
+.sec-news::before {
+	content: "";
+	background: #fff url(../images/icon-scissors-lgr.svg) no-repeat;
+	width: 30px;
+	height: 18px;
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+}
+
+.sec-news:nth-child(1) {
+	padding-top: 0;
+}
+
+.sec-news:nth-child(4) {
+	border-bottom: none;
+}
+
+.sec-news:nth-child(4)::before {
+	display: none;
+}
+
+.sec-news .flex-photo {
+	width: 40%;
+}
+
+.sec-news .flex-photo img {
+    height: 260px;
+    object-fit: cover;
+	object-position: top;
+    border: 1px solid #ccc;
+}
+
+
+.sec-news .flex-photo span {
+	display: block;
+	font-size: 0.875rem; /*14px*/
+	opacity: 0.6;
+	letter-spacing: 0;
+	padding-top: 10px;
+}
+
+.sec-news .flex-text {
+	width: 60%; 
+	padding-left: 40px;
+}
+
+.sec-news .flex-text h3 {
+	border-bottom: 2px solid var(--maincolor);
+	color: var(--maincolor);
+	font-size: 1.5rem; /*24px*/
+	padding: 5px 0;
+	line-height: 27px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.sec-news .flex-text h3::before {
+	content: "";
+	background: url(../images/icon-ttl.svg) no-repeat;
+	display: inline-block;
+	width: 30px;
+	height: 26px;
+}
+
+.sec-news .flex-text h3 +p {
+	color: #ccc;
+	font-size: 1.125rem; /*18px*/
+	font-family: var(--font-en);
+	font-weight: 500;
+	margin: 10px 0 15px 0;
+}
+
+#bg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+	z-index: 3;
+}
+
+#photo {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	text-align: center;
+	z-index: 3;
+}
+
+#close {
+	position: absolute;
+	top: -35px;
+	right: 25px;
+	width: 30px;
+	height: 30px;
+}
+
+#close::before,
+#close::after {
+	display: block;
+	content: "";
+	height: 4px;
+	background: #fff;
+	position: absolute;
+}
+
+#close::before {
+	top: 10px;
+	left: 0;
+	transform: translateY(0px) rotate(-45deg);
+	width: 100%;
+}
+
+#close::after {
+	bottom: 16px;
+	left: 0;
+	transform: translateY(0px) rotate(45deg);
+	width: 100%;
+}
+
+
+#photo img {
+	position: relative;
+	width: 90%;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------
+タブレット以下の表示はここからです
+------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width:767px){
+	.sec-news {
+		flex-direction: column-reverse;
+		padding: 50px 20px;
+		align-items: center;
+	}
+
+	.sec-news .flex-photo {
+		width: 100%; 
+		max-width: 420px;
+		margin-bottom: 0px;
+	}
+	
+	.sec-news .flex-text {
+		width: 100%; 
+		margin-bottom: 40px;
+		padding-left: 0;
+	}
+
+	.sec-news .flex-text h3 {
+		font-size: 1.375rem; /*22px*/
+	}
+
+	.sec-news .flex-text h3::before {
+		padding-left: 10px;
+	}
+
+	#photo {
+		width: 100%;
+	}
+
+}

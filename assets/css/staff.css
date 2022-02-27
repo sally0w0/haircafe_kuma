@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+.sub-visual {
+	background-image: url(../images/staff-mv.jpg);
+}
+
+.sec-staff {
+	padding: 50px 20px;
+	position: relative;
+	border-bottom: 3px dotted var(--bg-gr-color);
+	align-items: center;
+	line-height: 1.5;
+}
+
+.sec-staff::before {
+	content: "";
+	background: #fff url(../images/icon-scissors-lgr.svg) no-repeat;
+	width: 30px;
+	height: 18px;
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+}
+
+.sec-staff:nth-child(1) {
+	padding-top: 0;
+}
+
+.sec-staff:nth-child(4) {
+	border-bottom: none;
+}
+
+.sec-staff:nth-child(4)::before {
+	display: none;
+}
+
+.sec-staff:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.sec-staff .flex-photo {
+	width: 40%; 
+	border-radius: 57% 43% 36% 64% / 53% 52% 48% 47%;
+	overflow: hidden;
+	box-shadow: 10px 5px 0 var(--bg-gr-color);
+}
+
+.sec-staff .flex-text {
+	width: 60%; 
+	padding-left: 40px;
+}
+
+.sec-staff:nth-child(even) .flex-text  {
+	padding-right: 40px;
+	padding-left: 0px;
+}
+
+.staff-name {
+	border-bottom: 2px solid var(--maincolor);
+}
+
+.staff-name p {
+	font-family: var(--font-en);
+	font-weight: midium;
+	font-size: 2rem; /*32px*/
+	color: var(--maincolor);
+}
+
+.staff-name p:first-child {
+	font-size: 0.875rem; /*14px*/
+	color: var(--text-color);
+}
+
+.staff-name  p span {
+	font-weight: 500;
+	font-style: italic;
+	font-size: 1.25rem; /*20px*/
+	opacity: 0.3;
+	margin-left: 15px;
+}
+
+.sec-staff dl {
+	margin-bottom: 15px
+}
+
+.sec-staff dl div {
+	border-bottom: 1px dotted var(--text-color);
+	padding: 15px 0;
+}
+
+.sec-staff dl div dt {
+	font-weight: bold;
+	min-width: 9em;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------
+タブレット以下の表示はここからです
+------------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width:767px){
+	.sec-staff {
+		flex-direction: column;
+		padding: 50px 20px;
+	}
+
+	.sec-staff:nth-child(even) {
+		flex-direction: column;
+	}
+
+	.sec-staff .flex-photo {
+		width: 90%; 
+		max-width: 420px;
+		margin-bottom: 20px;
+	}
+	
+	.sec-staff .flex-text {
+		width: 100%; 
+		padding-left: 0px;
+	}
+
+	.sec-staff:nth-child(even) .flex-text  {
+		padding-right: 0px;
+	}
+	
+	.sec-staff dl div {
+		flex-direction: column;
+	}
+
+}
